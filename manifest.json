@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Unix Timestamp Converter",
   "description": "This extension will convert UT to dates (and vice-versa)",
-  "version": "1.0",
+  "version": "1.1",
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
