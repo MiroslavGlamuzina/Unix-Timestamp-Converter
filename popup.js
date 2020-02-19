@@ -47,7 +47,7 @@ const DateToUnix = input => {
         case '':
             return 'Waiting for input above...';
         default:
-            return new Date(input).getTime() / 1000;
+            return Math.floor(new Date(input).getTime() / 1000);
     }
 };
 
