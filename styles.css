@@ -1,0 +1,82 @@
+html {
+    width: 600px;
+    background-color: #282c34;
+    color: white;
+}
+
+.title {
+    margin: 0px;
+}
+
+input {
+    width: 500px;
+}
+
+
+.inputVertical {
+    width: 500px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 3px solid black;
+    padding: 5px;
+    font-weight: bolder;
+}
+
+.item {
+    margin: 20px;
+    color: #61dafb;
+    cursor: pointer;
+}
+
+.item:hover {
+    margin: 20px;
+    color: #c6eafb;
+}
+
+.emphasisText {
+    text-align: center;
+    font-size: small;
+    margin-top: 25px;
+    font-style: italic;
+    color: #747474;
+}
+
+#logs {
+    color: white;
+}
+
+table {
+    width: 500px;
+}
+
+td {
+    border-bottom: 1px solid #606060;
+    padding-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+td:hover {
+    /*color: #61dafb;*/
+    border-bottom: 1px solid #61dafb;
+}
+
+.clear-logs {
+    width: 500px;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.clear-logs a {
+    border: 1px dashed #61dafb;
+    padding: 4px;
+    border-radius: 2px;
+    cursor: pointer;
+    color: #61dafb;
+}
+
+#info {
+    /*transition: 1.5s;*/
+    opacity: 0;
+    color: springgreen;
+}

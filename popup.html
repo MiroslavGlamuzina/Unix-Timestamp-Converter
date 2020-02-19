@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <script src="popup.js"></script>
+    <title>Unix Timestamp Converter</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<center>
+    <center>
+        <h3 class="title">Unix Timestamp Converter</h3>
+        <div style="width: 100%; float: right">
+            <small id='info'>Copied from clipboard</small>
+        </div>
+        <input id="input" class="inputVertical" type="text" placeholder="Enter unix time">
+        <br/>
+        <input id="result" class="inputVertical" type="text" placeholder="Waiting for input above..." disabled>
+    </center>
+    <br/>
+    <div id="logs"></div>
+    <div class="clear-logs">
+        <a id="clearLogs">clear logs</a>
+    </div>
+
+
+    <center class="emphasisText">
+        Type a proper date or unix-timestamp and have it converted, or use some of the auto features below
+    </center>
+
+    <div>
+        <span id="shortcut_today" class="item">today</span>
+        <span id="shortcut_now" class="item">now</span>
+        <span id="shortcut_yesterday" class="item">yesterday</span>
+        <span id="shortcut_tomorrow" class="item">tomorrow</span>
+        <span id="shortcut_noon" class="item">next noon</span>
+    </div>
+</center>
+</body>
+</html>
+
+
+
+
