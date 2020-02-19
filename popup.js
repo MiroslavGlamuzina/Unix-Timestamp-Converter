@@ -11,28 +11,39 @@ const unixToDate = value => new Date(value * 1000);
 
 /* Set inputs */
 const setInputs = value => {
-    document.getElementById('input').value = value;
-    document.getElementById('result').value = setValue(value);
+    let res = setValue(value);
+    if (typeof res === 'object' && Array.isArray(res)) {
+        document.getElementById('input').value = res[0];
+        document.getElementById('result').value = res[1];
+    } else {
+        document.getElementById('input').value = value;
+        document.getElementById('result').value = setValue(value);
+    }
 };
 
 /** Convert date to unix timestamp */
 const DateToUnix = input => {
     let date = new Date();
     switch (input) {
-        case 'today':
-            return new Date();
+        case 'startOfDay':
+            let startOfDay = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+            return [Math.floor(startOfDay.getTime() / 1000), startOfDay];
+        case 'endOfDay':
+            let endOfDay = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+            endOfDay.setHours(23, 59, 59, 999);
+            return [Math.floor(endOfDay.getTime() / 1000), endOfDay];
         case 'now':
-            return new Date();
+            return [Math.floor(date.getTime() / 1000), date];
         case 'yesterday':
             date.setDate(date.getDate() - 1);
-            return date;
+            return [Math.floor(date.getTime() / 1000), date];
         case 'tomorrow':
             date.setDate(date.getDate() + 1);
-            return date;
+            return [Math.floor(date.getTime() / 1000), date];
         case 'noon': // next noon
             if (date.getHours() >= 12) date.setDate(date.getDate() + 1);
             date.setHours(12, 0, 0, 0);
-            return date;
+            return [Math.floor(date.getTime() / 1000), date];
         case '':
             return 'Waiting for input above...';
         default:
@@ -105,8 +116,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Shortcuts
-    document.getElementById('shortcut_today').addEventListener('click', function () {
-        setInputs('today', true);
+    document.getElementById('shortcut_startOfDay').addEventListener('click', function () {
+        setInputs('startOfDay', true);
+    });
+    document.getElementById('shortcut_endOfDay').addEventListener('click', function () {
+        setInputs('endOfDay', true);
     });
     document.getElementById('shortcut_now').addEventListener('click', function () {
         setInputs('now', true);
