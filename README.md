@@ -2,6 +2,7 @@
 
 Chrome Extension for converting unix timestamps to dates and dates to unix timestamps. 
 
+![](example.gif)
 Features: 
 
 - Quick and easy way to convert unix timestamps to dates and dates.
