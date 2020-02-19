@@ -52,7 +52,7 @@ const DateToUnix = input => {
 };
 
 /* Commit log data to storage */
-const setLogs = value => chrome.storage.sync.set({key: value});
+const setLogs = value => chrome.storage.local.set({key: value});
 
 /* Display log data in UI */
 function renderLogs(logs, logsContainer, clearLogs) {
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let info = document.getElementById('info');
 
     // Set logs
-    chrome.storage.sync.get(['key'], (result) => {
+    chrome.storage.local.get(['key'], (result) => {
         logs = result.key || [];
         renderLogs(logs, logsContainer, clearLogs);
     });
