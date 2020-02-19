@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add current value to logs (if you press enter)
     input.addEventListener('keydown', e => {
         if (e.key === 'Enter') {
-            logs.push([input.value, result.value]);
+            logs.unshift([input.value, result.value]);
             setLogs(logs);
             if (logs.length) {
                 renderLogs(logs, logsContainer, clearLogs);
